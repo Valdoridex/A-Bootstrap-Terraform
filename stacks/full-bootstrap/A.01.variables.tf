@@ -9,3 +9,14 @@ variable "azure-location" {
   type        = string
   default     = "West Europe"
 }
+variable "tenant-id" {
+  description = "Azure Active Directory tenant. This value MUST be set!"
+  type        = string
+  default     = "00000000-0000-0000-0000-000000000000"
+}
+
+variable "devops-application-name" {
+  description = "Valdoridex DevOps agent identity as an Azure Intra ID application"
+  type        = string
+  default     = "Vdx-DevOps-Agent"
+}
