@@ -1,0 +1,43 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile",
+    "image": "az-tf-dev-01",
+    "args": {
+      "__UNAME": "vscode"
+    }
+  },
+  "remoteEnv": {
+    "CONTAINER_WORKSPACE_FOLDER": "${containerWorkspaceFolder}"
+  },
+  "name": "az-tf-dev-01",
+  "containerUser": "vscode",
+  "runArgs": [
+    "--rm",
+    "--hostname",
+    "az-tf-dev-01",
+    "--name",
+    "az-tf-dev-01"
+  ],
+  "postCreateCommand": "git config --global --add safe.directory ${CONTAINER_WORKSPACE_FOLDER}",
+  "mounts": [
+    "source=${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "workbench.colorTheme": "Kimbie Dark"
+      },
+      "extensions": [
+        "eamodio.gitlens",
+        "hashicorp.terraform",
+        "hediet.vscode-drawio",
+        "juliankaindl.deep-blue-theme",
+        "mhutchie.git-graph",
+        "ms-azuretools.vscode-azureterraform",
+        "oderwat.indent-rainbow",
+        "trunk.io",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  }
+}
