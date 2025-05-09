@@ -9,13 +9,21 @@ terraform {
       source  = "hashicorp/azuread"
       version = ">= 3.3.0"
     }
+    azuredevops = {
+      source  = "microsoft/azuredevops"
+      version = ">= 1.9.0"
+    }
   }
 }
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   subscription_id = var.subscription-id
-  features {}
+  features {
+    key_vault {
+      purge_soft_delete_on_destroy = true
+    }
+  }
 }
 
 # Configure the Azure Active Directory Provider
