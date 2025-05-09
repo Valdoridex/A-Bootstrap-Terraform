@@ -9,8 +9,15 @@ variable "azure-location" {
   type        = string
   default     = "West Europe"
 }
+
 variable "tenant-id" {
   description = "Azure Active Directory tenant. This value MUST be set!"
+  type        = string
+  default     = "00000000-0000-0000-0000-000000000000"
+}
+
+variable "subscription-id" {
+  description = "Azure ASubscription id. This value MUST be set!"
   type        = string
   default     = "00000000-0000-0000-0000-000000000000"
 }
