@@ -5,17 +5,12 @@ resource "azuread_application" "Vdx-DevOps-Agent" {
   owners       = [data.azuread_client_config.current.object_id]
 }
 
-resource "azuread_application_registration" "Vdx-DevOps-Agent-SP" {
-  display_name = var.devops-application-user-name
+resource "azuread_service_principal" "SP-Vdx-DevOps-Agent" {
+  client_id                    = azuread_application.Vdx-DevOps-Agent.client_id
+  app_role_assignment_required = false
+  owners                       = [data.azuread_client_config.current.object_id]
 }
 
-# resource "time_rotating" "example" {
-#   rotation_days = 7
-# }
-
-resource "azuread_application_password" "Vdx-DevOps-Agent-SP-Password" {
-  application_id = azuread_application_registration.Vdx-DevOps-Agent-SP.id
-  # rotate_when_changed = {
-  #   rotation = time_rotating.example.id
-  # }
+resource "azuread_service_principal_password" "SP-Vdx-DevOps-Agent-Password" {
+  service_principal_id = azuread_service_principal.SP-Vdx-DevOps-Agent.id
 }
