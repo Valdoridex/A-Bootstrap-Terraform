@@ -7,6 +7,7 @@ resource "azurerm_container_registry" "vdx-acr" {
   resource_group_name = azurerm_resource_group.Vdx-DevOps.name
   location            = var.azure-location
   sku                 = "Basic"
+  tags                = local.tags
 }
 
 # trunk-ignore-end(checkov)

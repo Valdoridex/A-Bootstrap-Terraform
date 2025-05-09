@@ -12,6 +12,7 @@ resource "azurerm_key_vault" "vdx-key-vault" {
   soft_delete_retention_days  = 7
   purge_protection_enabled    = true
   sku_name                    = "standard"
+  tags                        = local.tags
 }
 
 # trunk-ignore-end(checkov/CKV2_AZURE_32,checkov/CKV_AZURE_109,checkov/CKV_AZURE_189)

@@ -18,4 +18,5 @@ resource "azurerm_shared_image" "base-ubuntu-golden" {
     offer     = "ubuntu"
     sku       = "base-golden"
   }
+  tags = local.tags
 }

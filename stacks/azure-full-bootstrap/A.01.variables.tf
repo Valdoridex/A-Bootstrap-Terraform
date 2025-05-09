@@ -39,3 +39,9 @@ variable "stack-magic-id" {
   type        = string
   default     = "hqwep"
 }
+
+variable "vmss-pub-ssh-key-file" {
+  description = "Path of the public ssh key for adminuser on virtual machines scales sets"
+  type        = string
+  default     = "./id_rsa.pub"
+}
