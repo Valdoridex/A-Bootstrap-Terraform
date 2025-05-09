@@ -33,3 +33,9 @@ variable "devops-application-user-name" {
   type        = string
   default     = "SP-Vdx-DevOps-Agent"
 }
+
+variable "stack-magic-id" {
+  description = "A random string helping avoiding global resources names conflicts"
+  type        = string
+  default     = "hqwep"
+}
