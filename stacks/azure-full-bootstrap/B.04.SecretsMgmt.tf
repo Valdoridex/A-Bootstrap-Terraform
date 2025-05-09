@@ -15,3 +15,5 @@ resource "azurerm_key_vault" "vdx-key-vault" {
 }
 
 # trunk-ignore-end(checkov/CKV2_AZURE_32,checkov/CKV_AZURE_109,checkov/CKV_AZURE_189)
+
+# TODO / postponed - continue with keys after determining if devops pools can work in private nets
