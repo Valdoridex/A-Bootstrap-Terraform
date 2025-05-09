@@ -36,6 +36,7 @@
         "ms-azuretools.vscode-azureterraform",
         "oderwat.indent-rainbow",
         "trunk.io",
+        "usetheplatform.azure-dark",
         "yzhang.markdown-all-in-one"
       ]
     }
