@@ -20,3 +20,9 @@ variable "devops-application-name" {
   type        = string
   default     = "Vdx-DevOps-Agent"
 }
+
+variable "devops-application-user-name" {
+  description = "Valdoridex DevOps agent user name"
+  type        = string
+  default     = "SP-Vdx-DevOps-Agent"
+}
